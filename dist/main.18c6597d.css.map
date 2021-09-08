@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.css"],"names":[],"mappings":"AAAA,iBACI,wBACJ,CACA,eACI,wBACJ","file":"main.18c6597d.css","sourceRoot":"..","sourcesContent":[".bg-blue-default{\n    background-color: #339FCD;\n}\n.bg-blue-hover{\n    background-color: #88c1da;\n}"]}
