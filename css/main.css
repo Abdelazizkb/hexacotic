@@ -7,3 +7,6 @@
 .text-blue-default{
     color: #339FCD;
 }
+.sticky{
+  box-shadow: 2px 2px;
+}

@@ -15,13 +15,13 @@
 
   <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 ">
     
-    <div class="w-full fixed bg-white  z-50 ">
+    <div id="myHeader" class="w-full fixed bg-white z-50 ">
         <div x-data="{ open: false }"
         class=" flex flex-col container px-4 mx-auto  md:justify-between md:flex-row md:px-6 lg:px-8 md:items-center">
 
         <div class=" flex flex-row items-center justify-between">
           <a href="#"
-            class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"><img
+            class="p-1 text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"><img
               class="w-16 md:w-24" src="img/logo.png"></a>
           <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
             <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -38,13 +38,10 @@
 
         <nav :class="{'flex': open, 'hidden': !open}"
           class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-          <a class="link" href="#about">About</a>
-          <a class="link" href="#contact">Contact</a>
-          <a class="link" href="#services">Services</a>
-          <a class="link" href="#projects">Projects</a>
-          <a class=" text-white py-2 px-4  font-bold bg-blue-default md:rounded-2xl hover:bg-blue-500" href="#">Get
-            Started</a>
-
+          <a class="link" href="#about" @click="open = !open">About</a>
+          <a class="link" href="#contact" @click="open = !open">Contact</a>
+          <a class="link" href="#services" @click="open = !open">Services</a>
+          <a class="link" href="#projects" @click="open = !open">Projects</a>
         </nav>
       </div>
     </div>
@@ -67,7 +64,7 @@
         <div class="relative animate-bounce-slow">
           <img class="absolute top-4 left-3 " src="img/kid1.png" />
           <a class="relative text-lg md:text-xl text-white py-3 px-4  font-bold bg-blue-default rounded-2xl  hover:bg-blue-500 "
-            href="#">Our services</a>
+            href="#services">Our services</a>
         </div>
       </div>
 
@@ -82,7 +79,7 @@
       <div class="max-w-screen-xl px-4  mx-auto flex flex-col items-center">
 
         <div class="flex items-end pt-2 mx-auto">
-          <Span><img src="img/kid2.png" width="70" /></Span>
+          <Span><img  src="img/kid2.png" width="50" /></Span>
           <span class="text-lg md:text-3xl font-bold">Digital development agency</span>
         </div>
 
@@ -263,7 +260,7 @@
         <span class="text-lg font-medium ">hexacotic@gmail.com</span>
       </div>
       <!-- component -->
-      <form action="#" class="w-full max-w-5xl py-4">
+      <form class="w-full max-w-5xl py-4" onsubmit={sendMail()}>
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -271,7 +268,7 @@
             </label>
             <input  id="firstname"
               class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              id="grid-first-name" type="text" placeholder="Jane">
+              id="grid-first-name" type="text" placeholder="Jane" required>
           </div>
           <div class="relative w-full md:w-1/2 px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
@@ -279,7 +276,7 @@
             </label>
             <input  id="lastname"
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-last-name" type="text" placeholder="Doe">
+              id="grid-last-name" type="text" placeholder="Doe" required> 
             <img class="absolute -top-16 left-36 md:left-40 " src="img/message.png" width="170">
           </div>
         </div>
@@ -290,8 +287,7 @@
             </label>
             <input  id="email"
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="email" type="email">
-            <p class="text-gray-600 text-xs italic">Some tips - as long as needed</p>
+              id="email" type="email" required>
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -309,7 +305,7 @@
             <img class="absolute top-8 left-3" src="img/kid1.png" width="46" />
             <button 
               class="relative shadow bg-blue-default hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button" onclick={sendMail()}>
+              type="submit" >
               Send
             </button>
           </div>
@@ -325,7 +321,7 @@
         <img class="w-24" src="img/logo.png">
         <div class="flex text-white p-2">
           <a href="https://www.facebook.com/Hexacotic-233332338625864"><img class="w-8" src="img/facebook.png"></a>
-          <a href="https://www.linkedin.com/company/79969594"><img class="w-8 mx-2" src="img/instagram.png"></a>
+          <a href="https://www.instagram.com/hexacotic/"><img class="w-8 mx-2" src="img/instagram.png"></a>
           <a href="https://www.linkedin.com/company/79969594"><img class="w-8" src="img/linkedin .png"></a>
         </div>
       </div>
